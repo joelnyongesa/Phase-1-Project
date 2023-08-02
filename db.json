@@ -1,0 +1,34 @@
+{
+    "zero-hunger":[
+        {
+            "id": 1,
+            "county": "Bungoma",
+            "image": "https://t3.ftcdn.net/jpg/05/97/37/40/240_F_597374097_pec5BaAkztcI6kM8B4ZhyxLGsHVARbv6.jpg",
+            "donation": 100
+        },
+        {
+            "id": 2,
+            "county": "Marsabit",
+            "image": "https://t4.ftcdn.net/jpg/05/69/57/47/240_F_569574716_Q6AZNCvm6n9Bl01Xi8vU2t4CWg7OpveE.jpg",
+            "donation": 0
+        },
+        {
+            "id": 3,
+            "county": "Turkana",
+            "image": "https://t4.ftcdn.net/jpg/05/97/37/31/240_F_597373179_5eVDEopn5Y6ppV9VL0WtTpSL07qHyogP.jpg",
+            "donation": 50
+        },
+        {
+            "id": 4,
+            "county": "Mandera",
+            "image": "https://t4.ftcdn.net/jpg/04/50/76/49/240_F_450764906_8V4EWmoavCptJJJ2HsbSOHjROaTVW9JL.jpg",
+            "donation": 20
+        },
+        {
+            "id": 5,
+            "county": "Wajir",
+            "image": "https://t4.ftcdn.net/jpg/00/69/93/93/240_F_69939359_FzZghIuEK9choyDAslONTHmG8p2ysVdx.jpg",
+            "donation": 120
+        }
+    ]
+}
