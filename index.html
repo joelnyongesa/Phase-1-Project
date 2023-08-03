@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <nav class="bg-gray-700 flex items-center">
@@ -58,20 +59,25 @@
     </div>
   </nav>
 
+
+  <div class="flex justify-center">
+    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 py-20">Did you know?</h1>
+  </div>
+  
   <div class="bg-white py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
         <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-          <dt class="text-base leading-7 text-gray-600">Transactions every 24 hours</dt>
-          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">44 million</dd>
+          <dt class="text-base leading-7 text-gray-600">Child dies of hunger every ten seconds worldwide</dt>
+          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">1</dd>
         </div>
         <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-          <dt class="text-base leading-7 text-gray-600">Assets under holding</dt>
-          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">$119 trillion</dd>
+          <dt class="text-base leading-7 text-gray-600">Children die of hunger every year in the <em>Sub Saharan Africa</em> region alone</dt>
+          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">3.2 Million</dd>
         </div>
         <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-          <dt class="text-base leading-7 text-gray-600">New users annually</dt>
-          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">46,000</dd>
+          <dt class="text-base leading-7 text-gray-600">According to UN SDG 2, we aim to eradicate this by achieving Zero Hunger by the year 2030</dt>
+          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">2030</dd>
         </div>
       </dl>
     </div>
@@ -81,6 +87,39 @@
   <div class="cards items-center flex-column-gap-y-4">
     
   </div>
+  <!-- <div class="cards flex flex-col justify-center items-center">
+    
+  </div> -->
+
+  <!-- Make a donation -->
+  <div class="flex flex-col items-center justify-center h-screen">
+    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900">Make a donation today!</h1>
+
+    <div class="w-full max-w-xs mx-auto"> <!-- Add mx-auto to center the form -->
+      <form id = "form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+            County: 
+          </label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="country" type="text" placeholder="County">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="amount">
+            Amount
+          </label>
+          <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="amount" type="number" placeholder="Amount in USD">
+          <p class="text-red-500 text-xs italic">Please enter an amount</p>
+        </div>
+        <div class="flex items-center justify-between">
+          <button id="makeDonation" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Donate
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+</body>
   
 
   <script src="./index.js"></script>
