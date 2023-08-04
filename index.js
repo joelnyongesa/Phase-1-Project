@@ -51,7 +51,7 @@ function makeDonation(){
         .then(res => res.json())
         .then(counties =>{
             updateDonations(counties);
-            updateDonors();
+            updateDonors(counties);
         })
         .catch(err => console.log(err))
         })
@@ -111,11 +111,61 @@ function updateDonations(counties){
 }
 
 
-function updateDonors(){
+function updateDonors(counties){
     let donor = document.getElementById('donor')
-    console.log(donor.value)
+    let countyDonated = document.getElementById('county')
+    let amount = document.getElementById('amount')
+    // console.log(donor.value, countyDonated.value, amount.value)
+
+
+
+    for(county of counties){
+        if (countyDonated.value.toLowerCase() === county.county.toLowerCase()){
+            fetch(`https://zero-hunger-server.onrender.com/zero-hunger/${county.id}`, {
+                method: "PATCH",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                donors: {
+                    [donor.value] : amount.value
+                }
+                })
+            })
+            .then(res => console.log(res.status))
+        }
+    }
+
+
 }
+
+
+
+// // Display donors
+// function displayDonors(){
+//     let list = document.createElement('ul')
+//     list.className = "list-none"
+
+//     fetch('https://zero-hunger-server.onrender.com/zero-hunger')
+//     .then(res => res.json())
+//     .then(counties =>{
+//         for (county of counties){
+//             let listItem = document.createElement('li')
+//             listItem.innerHTML = `
+//                 <h1 font-extrabold> County: ${county.county}</h1>
+//                 <p> Total Donations: ${county.donation} USD</p>
+//                 <p>Donors: ${for(donor of county.donors){}}</p>
+//                 <p
+//                 <hr color-black>
+//             `
+//             list.appendChild(listItem)
+//             document.querySelector('#donors-list').appendChild(list)
+//         }
+//     })
+//     // <th class="w-1/2 px-4 py-2">Title</th>
+//     //   <th class="w-1/4 px-4 py-2">Author</th>
+//     //   <th class="w-1/4 px-4 py-2">Views</th>
+// }
 
 
 fetchData()
 makeDonation()
+// displayDonors()
