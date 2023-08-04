@@ -15,7 +15,7 @@ function fetchData(){
 function renderImage(images){
     for (image of images){
         let imageCard = document.createElement('div')
-        imageCard.className = 'max-w-sm rounded overflow-hidden shadow-lg'
+        imageCard.className = 'max-w-sm rounded overflow-hidden shadow-lg hover:-translate-y-1 hover:scale-110 duration-300'
         imageCard.innerHTML = `
         <div class="max-w-sm rounded overflow-hidden shadow-lg">
         <img class="w-full h-full" src="${image.image}">
