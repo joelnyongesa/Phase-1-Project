@@ -3,7 +3,7 @@ let cards = document.querySelector('.cards')
 
 // Fetching from our database and creating cards.
 function fetchData(){
-    fetch('http://localhost:3000/zero-hunger')
+    fetch('https://zero-hunger-server.onrender.com/zero-hunger')
     .then(res => res.json())
     .then(images => renderImage(images))
     .catch(error => console.log(error))
@@ -47,7 +47,7 @@ function makeDonation(){
         // Loop through the objects, and check if the country is valid.
         e.preventDefault()
         // console.log(country.value.toLowerCase())
-        fetch('http://localhost:3000/zero-hunger')
+        fetch('https://zero-hunger-server.onrender.com/zero-hunger')
         .then(res => res.json())
         .then(counties => updateDonations(counties))
         .catch(err => console.log(err))
@@ -68,16 +68,21 @@ function updateDonations(counties){
     let countyDonated = document.getElementById('county')
     let amount = document.getElementById('amount')
     let warning = document.getElementById('warning')
+    
     for(county of counties){
+        // let updatedDonation = (parseInt(county.donation) + amount.value)
+        // console.log(updatedDonation)
         if(countyDonated.value.toLowerCase() === county.county.toLowerCase()){
-            fetch(`http://localhost:3000/zero-hunger/${county.id}`, {
+
+            let updatedDonation = (parseInt(county.donation) + parseInt(amount.value))
+            fetch(`https://zero-hunger-server.onrender.com/zero-hunger/${county.id}`, {
                 method: "PATCH",
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
-                    donation: amount.value
+                    donation: updatedDonation
                 })
             })
-            .then(res => res.status)
+            .then(res => console.log(res.status))
             .catch(error => console.log(error))
         } else{
             warning.innerText = 'Invalid county or amount, please try again!'
