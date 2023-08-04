@@ -4,3 +4,9 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+.image{
+  object-fit: fill;
+  width: 360px;
+  height: 240px;
+}
