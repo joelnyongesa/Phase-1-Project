@@ -40,8 +40,8 @@
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="bg-gray-700 text-white rounded-md px-3 py-2 text-sm font-medium transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300 ..." aria-current="page">Make a donation!</a>
-              <a href="#" class="text-white bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300 ..." aria-current="page">Learn More About SDGs</a>
+              <a href="#form" class="bg-gray-700 text-white rounded-md px-3 py-2 text-sm font-medium transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300 ..." aria-current="page">Make a donation!</a>
+              <a href="https://sdgs.un.org/goals" target="_blank" class="text-white bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300 ..." aria-current="page">Learn More About SDGs</a>
             </div>
           </div>
         </div>
@@ -53,8 +53,8 @@
     <div class="sm:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pb-3 pt-2">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="#" class="bg-gray-700 text-white block rounded-md px-3 py-2 text-base font-medium transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300 ..." aria-current="page">Make a Donation</a>
-        <a href="#" class="text-gray-300 bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300 ...">Learn More About SDG's</a>
+        <a href="#form" class="bg-gray-700 text-white block rounded-md px-3 py-2 text-base font-medium transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300 ..." aria-current="page">Make a Donation</a>
+        <a href="https://sdgs.un.org/goals" target="_blank" class="text-gray-300 bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300 ...">Learn More About SDG's</a>
       </div>
     </div>
   </nav>
@@ -101,14 +101,14 @@
           <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
             County: 
           </label>
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="country" type="text" placeholder="County">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="county" type="text" placeholder="County">
         </div>
         <div class="mb-6">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="amount">
             Amount
           </label>
           <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="amount" type="number" placeholder="Amount in USD">
-          <p class="text-red-500 text-xs italic">Please enter an amount</p>
+          <p id="warning" class="text-red-500 text-xs italic">Please enter an amount</p>
         </div>
         <div class="flex items-center justify-between">
           <button id="makeDonation" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">

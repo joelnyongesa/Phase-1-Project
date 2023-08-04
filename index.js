@@ -23,7 +23,7 @@ function renderImage(images){
           <div class="font-bold text-xl mb-2">${image.county} County</div>
             <p class="text-gray-700 text-base">County: ${image.county}</p>
             <div class="container flex items-center justify-between">
-                <p>Donations so far: ${image.donation}</p>
+                <p>Donations: ${image.donation} USD</p>
                 <button id="donate" class="bg-gray-700 hover:bg-gray-700 text-white py-2 px-4 border rounded transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300 ...">Make a Donation!</button>
             </div>
         
@@ -41,15 +41,52 @@ function renderImage(images){
 // Adding event listener to form.
 function makeDonation(){
     let form = document.getElementById('form')
-    let country = document.getElementById('country')
-    let amount = document.getElementById('amount')
+
     form.addEventListener('submit', (e)=>{
+
+        // Loop through the objects, and check if the country is valid.
         e.preventDefault()
+        // console.log(country.value.toLowerCase())
+        fetch('http://localhost:3000/zero-hunger')
+        .then(res => res.json())
+        .then(counties => updateDonations(counties))
+        .catch(err => console.log(err))
+        })
         // PATCH- To update the donations.
-        fetch('http://localhost:3000/zero-hunger', )
-    })
+    //     fetch('http://localhost:3000/zero-hunger', {
+    //         method: "PATCH",
+    //         headers: {'Content-Type': "application/json"},
+    //         body: JSON.stringify({donation: amount.value})
+    //     })
+    // })
+    // .then(response => response.status)
+    // .catch(error => console.log(error))
 }
 
+
+function updateDonations(counties){
+    let countyDonated = document.getElementById('county')
+    let amount = document.getElementById('amount')
+    let warning = document.getElementById('warning')
+    for(county of counties){
+        if(countyDonated.value.toLowerCase() === county.county.toLowerCase()){
+            fetch(`http://localhost:3000/zero-hunger/${county.id}`, {
+                method: "PATCH",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    donation: amount.value
+                })
+            })
+            .then(res => res.status)
+            .catch(error => console.log(error))
+        } else{
+            warning.innerText = 'Invalid county or amount, please try again!'
+        }
+        // else{
+        //     console.log('County not found')
+        // }
+    }
+}
 
 
 
