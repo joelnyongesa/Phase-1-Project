@@ -6,7 +6,7 @@ One child dies of hunger every ten seconds worldwide. 3.2 million children die o
 
 
 # Solution.
-This project aims to tackle this by highlighting the regions most affected by hunger in KEnya, and promt users to make donations towards providing food to these vulnerable children.
+This project aims to tackle this by highlighting the regions most affected by hunger in KEnya, and promt users to make donations towards providing food to these vulnerable children. The live site is deployed [here](https://joelnyongesa.github.io/Phase-1-Project/)
 
 # Demo
 <img src='./images/demo.gif'>
