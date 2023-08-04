@@ -1,3 +1,12 @@
+/*
+TODO:
+Add event listeners (2)
+Structure my landing page well enough
+Table to display the donations and donors.
+*/
+
+
+
 let cards = document.querySelector('.cards')
 
 
@@ -139,31 +148,6 @@ function updateDonors(counties){
 
 
 
-// // Display donors
-// function displayDonors(){
-//     let list = document.createElement('ul')
-//     list.className = "list-none"
-
-//     fetch('https://zero-hunger-server.onrender.com/zero-hunger')
-//     .then(res => res.json())
-//     .then(counties =>{
-//         for (county of counties){
-//             let listItem = document.createElement('li')
-//             listItem.innerHTML = `
-//                 <h1 font-extrabold> County: ${county.county}</h1>
-//                 <p> Total Donations: ${county.donation} USD</p>
-//                 <p>Donors: ${for(donor of county.donors){}}</p>
-//                 <p
-//                 <hr color-black>
-//             `
-//             list.appendChild(listItem)
-//             document.querySelector('#donors-list').appendChild(list)
-//         }
-//     })
-//     // <th class="w-1/2 px-4 py-2">Title</th>
-//     //   <th class="w-1/4 px-4 py-2">Author</th>
-//     //   <th class="w-1/4 px-4 py-2">Views</th>
-// }
 
 
 fetchData()
