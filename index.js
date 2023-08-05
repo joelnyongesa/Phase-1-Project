@@ -169,10 +169,49 @@ function addCountyCard(){
 }
 
 
+// Delete County
+function deleteCounty() {
+    // Add an event listener to the button to display the form.
+    let deleteBtn = document.getElementById('deleteBtn');
+    let deleteForm = document.getElementById('deleteCounty');
+    deleteBtn.addEventListener('click', () => {
+                // Toggle the visibility of the form
+        if (deleteForm.style.visibility === 'hidden' || deleteForm.style.visibility === '') {
+            deleteForm.style.visibility = 'visible';
+        } else {
+            deleteForm.style.visibility = 'hidden';
+        }
+    });
+
+    // Form event listener
+    deleteForm.addEventListener('submit', (e)=>{
+        e.preventDefault()
+        // console.log('Clicked!')
+        let countyName = document.getElementById('countyToDelete').value
+        fetch('https://zero-hunger-server.onrender.com/zero-hunger')
+        .then(res => res.json())
+        .then(counties => {
+            for(county of counties){
+                // console.log(county.county.toLowerCase())
+                if(countyName.toLowerCase() === county.county.toLowerCase()){
+                    fetch(`https://zero-hunger-server.onrender.com/zero-hunger/${county.id}`, {
+                        method: "DELETE"
+                    })
+                    .then(res => console.log(res.status))
+                    .catch(err => console.log(err))
+                }
+            }
+        })
+        .catch(error => console.log(error))
+    })
+
+
+}
 
 
 
 fetchData()
 makeDonation()
 addCountyCard()
+deleteCounty()
 // displayDonors()
