@@ -1,7 +1,6 @@
 /*
 TODO:
 Add event listeners (2)
-Structure my landing page well enough
 Table to display the donations and donors.
 */
 
@@ -147,9 +146,33 @@ function updateDonors(counties){
 }
 
 
+// Adding a county card to the current counties.
+function addCountyCard(){
+    let countyForm = document.getElementById('add-county')
+    countyForm.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        let newCounty = document.getElementById('new-county').value
+        let newImage = document.getElementById('new-image').value
+        let newDonation = document.getElementById('new-donations').value
+
+        // console.log(newCounty, newImage, newDonation)
+        fetch('https://zero-hunger-server.onrender.com/zero-hunger', {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                county: newCounty,
+                image: newImage,
+                donation: newDonation
+            })
+        })
+    })
+}
+
+
 
 
 
 fetchData()
 makeDonation()
+addCountyCard()
 // displayDonors()
