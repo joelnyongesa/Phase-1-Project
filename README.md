@@ -6,11 +6,16 @@ One child dies of hunger every ten seconds worldwide. 3.2 million children die o
 
 
 # Solution.
-This project aims to tackle this by highlighting the regions most affected by hunger in KEnya, and promt users to make donations towards providing food to these vulnerable children. The live site is deployed [here](https://joelnyongesa.github.io/Phase-1-Project/)
+This project aims to tackle this by highlighting the regions most affected by hunger in Kenya, and promt users to make donations towards providing food to these vulnerable children. The live site is deployed [here](https://joelnyongesa.github.io/Phase-1-Project/)
 
 # Demo
 <img src='./images/demo.gif'>
 
+
+## As a user, I can: 
+* Add a County to the existing counties.
+* Delete an existing county from the list of counties.
+* Make a donation.
 
 # Setting up the project.
 Fork this repository, then clone using `git clone git@github.com:joelnyongesa/Phase-1-Project.git`.
